@@ -7,7 +7,7 @@
    --body-font: "Roboto", sans-serif;
    --nav-font-size: 1.5rem;
    --nav-font-size1: 1rem;
-   --h1-font-size: 4.25rem;
+   --h1-font-size: 7.25rem;
    --h2-font-size: 2.75rem;
    --h3-font-size: 1.75rem;
    --text-font-size: 1rem;
@@ -24,8 +24,13 @@
 }
 /* colour */
 /* Switch button */
+body{
+    display:contents;
+
+}
+/*================================================================== navbar=============================================================== */
 .navbar{
-    background-color: #111;
+    background-color: var(--colour--black);
 }
 
 a.nav{
@@ -34,10 +39,10 @@ a.nav{
 a.nav:hover{
     color:#ff4c4c
 }
-
+/*================================================================== section 1=============================================================== */
 #section1 {
     background-image: linear-gradient(to bottom, var(--colour--black) , var(--colour-nav) , var(--text-detail-colour));
-    /* background-image: url("../asset/images/hero-background.jpg"); */
+    /* background-image: url("../asset/images/bg-section1.png"); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -45,8 +50,7 @@ a.nav:hover{
     height: 100vh;
     position: relative;
     align-items: center;
-    color: white;
- 
+    color: white; 
 }
 .text-b,.text-r {
     font-family: var(--body-font);
@@ -54,6 +58,8 @@ a.nav:hover{
 }
 .text-b {
     font-weight: bold;
+
+
 }
 .text-r {
     font-weight: normal;
@@ -66,13 +72,17 @@ a.nav:hover{
     border-right: solid 4px var(--bg-main-color);
     overflow: hidden;
     width: 10ch;
-    animation: typewriter 2s steps(10) 0.1s 
+    animation: typewriter 2s steps(10) 0.1s , cursor .5s steps(11) infinite alternate-reverse;
     
 }
 /* Typing animate */
 @keyframes  typewriter {
     0%{width: 0ch;}
     100%{width: 10ch;}  
+}
+@keyframes cursor{
+    0% {border-color: transparent ;}
+    100% {border-color: var(--bg-main-color) ;}
 }
 
 .social svg{
@@ -90,12 +100,33 @@ a.nav:hover{
     height: 4px;
     background-color: var(--bg-main-color);
 }
+.underline1{
+    width: 50%;
+    height: 4px;
+    background-color: var(--bg-main-color);
+}
+.img-bg img {
+    display: flex;
+    margin-right: 0px;
+
+}
+/*================================================================== section 2 About me=============================================================== */
+#section2{
+    font-family: var(--body-font);
+}
+.info {
+    font-weight: bolder;
+}
+.infodetail {
+    font-weight: normal;
+}
 .text-about-me{
     font-family: var(--body-font);
     font-size: var(--text-font-size);
     font-weight: normal;
 }
 .button {
+    position: absolute;
     display: inline;
     font-family: var(--body-font);
     font-size: var(--text-buttons-font-size);
@@ -104,10 +135,106 @@ a.nav:hover{
     color: white;
     padding:12px;
     border: solid 1px var(--bg-main-color);
+    left: 400px;
+    
 }
 
-.button:hover {
+
+.btn {
+    padding: 1em 2.1em 1.1em;
+
+    border-radius: 3px;
+    margin: 8px 8px 8px 8px;
+    color: #ffffff;
+    display: inline-block;
+    background: #ff4c4c;
+    font-weight: 800;
+    font-size: .85em;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+}
+.btn:hover{
+    color: #ff4c4c;
     background-color:white;
-    color: var(--bg-main-color);
-  
+}
+
+/* เพิ่มเติม css อื่น ๆ ที่ต้องการได้ */
+
+/*================================================================== section 2 About me=============================================================== */
+.skill {
+    text-decoration: var(--bg-main-color) underline;  
+    
+}
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 1000px;
+    background-color: wheat;
+}
+.icon-skill {
+    width: 40px;
+    height: 40px;
+}
+.skillbar {
+    border-radius: 50px;
+    margin: 0px;
+	position:relative;
+	display:block;
+	width:100%;
+	background:#eee;
+	height:16px;
+	-webkit-transition:0.4s linear;
+	-moz-transition:0.4s linear;
+	-ms-transition:0.4s linear;
+	-o-transition:0.4s linear;
+	transition:0.4s linear;
+	-webkit-transition-property:width, background-color;
+	-moz-transition-property:width, background-color;
+	-ms-transition-property:width, background-color;
+	-o-transition-property:width, background-color;
+	transition-property:width, background-color;
+}
+
+.skillbar-title {
+    border-radius: 50px;
+	position:absolute;
+	top:0;
+	left:0;
+width:110px;
+	font-weight:bold;
+	font-size:13px;
+	color:#ffffff;
+	background:#6adcfa;
+	-webkit-border-top-left-radius:3px;
+	-webkit-border-bottom-left-radius:4px;
+	-moz-border-radius-topleft:3px;
+	-moz-border-radius-bottomleft:3px;
+	border-top-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+
+.skillbar-bar {
+
+	height:16px;
+	width:0px;
+	background:#6adcfa;
+
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+    border-radius: 50px;
+}
+
+.skill-bar-percent {
+	position:absolute;
+	right:10px;
+	top:0;
+	font-size:11px;
+	height:16px;
+	line-height:16px;
+	color:#ffffff;
+	color:rgba(0, 0, 0, 0.8);
+    border-radius: 50px;
 }

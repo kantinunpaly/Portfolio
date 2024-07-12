@@ -27,6 +27,7 @@
 .navbar{
     background-color: #111;
 }
+
 a.nav{
     color:white
 }
@@ -63,16 +64,15 @@ a.nav:hover{
     font-weight: bold;
     text-decoration: var(--bg-main-color) underline;   
     border-right: solid 4px var(--bg-main-color);
-    white-space: nowrap;
     overflow: hidden;
-    width: 11ch;
-    animation: typewriter 3s steps(11) 1s ,cursor 50ms steps(11) infinite;
-    left: 20px;
+    width: 10ch;
+    animation: typewriter 2s steps(10) 0.1s 
+    
 }
 /* Typing animate */
 @keyframes  typewriter {
     0%{width: 0ch;}
-    100%{width: 11ch;}  
+    100%{width: 10ch;}  
 }
 
 .social svg{

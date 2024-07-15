@@ -114,6 +114,9 @@ a.nav:hover{
 #section2{
     font-family: var(--body-font);
 }
+.about-me { text-decoration: var(--bg-main-color) underline; 
+
+}
 .info {
     font-weight: bolder;
 }
@@ -161,7 +164,8 @@ a.nav:hover{
 
 /* เพิ่มเติม css อื่น ๆ ที่ต้องการได้ */
 
-/*================================================================== section 2 About me=============================================================== */
+/*================================================================== section 3 skills=============================================================== */
+
 .skill {
     text-decoration: var(--bg-main-color) underline;  
     
@@ -237,4 +241,119 @@ width:110px;
 	color:#ffffff;
 	color:rgba(0, 0, 0, 0.8);
     border-radius: 50px;
+}
+/*================================================================== section 4 portfolio =============================================================== */
+#section4 {
+    background-color: var(--colour-nav);
+    color: #ffffff;
+}
+
+.portfolio {
+    text-decoration: var(--bg-main-color) underline;   
+}
+.portfolio-thumb img {
+    width: 100%;
+}
+.portfolio-box {
+    position: relative; /* เพิ่มตำแหน่งสำหรับการวางตำแหน่งลูก */
+}
+.portfolio-box .hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    padding: 15px;
+    transition: all 0.5s; /* เพิ่ม transition สำหรับการเปลี่ยนแปลง */
+}
+.portfolio-box:hover .hover { 
+    opacity: 1;
+    visibility: visible;
+}
+.portfolio-box .hover div {
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+a, a:hover, .overlay, img{
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+a, a:hover {
+    text-decoration: none;
+}
+img[alt="img"]:hover {
+    -webkit-transform: scale(.9);
+    -moz-transform: scale(.9);
+    -o-transform: scale(.9);
+    transform: scale(.9);
+}
+.modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100% - 1rem);
+}
+.modal-content {
+    background: transparent;
+    border: none;
+    text-align: center;
+}
+.responsive-button {
+    padding: 1em 2.1em 1.1em;
+    border-radius: 4px;
+    margin: 8px;
+    color: #ffffff;
+    display: inline-block;
+    background: #ff4c4c;
+    font-weight: 800;
+    font-size: .85em;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    border: 1px solid #ff4c4c; /* เพิ่ม border สีแดง */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.responsive-button:hover {
+    color: #ff4c4c;
+    background-color: white;
+    border-color: #ff4c4c; /* เปลี่ยน border เป็นสีแดงเมื่อ hover */
+}
+
+/*================================================================== section 5 experience =============================================================== */
+
+#section5{
+    position: relative;
+}
+
+.underline-text {
+    text-decoration: underline #ff4c4c;
+}
+
+.timeline {
+ border-right: 3px solid red;
+}
+.row.education {
+    text-align: right;
+    background-color: #ffffff;
+    border-radius: 8px !important;
+    border:1px solid #ffffff;
+    margin: 100px 0px 100px 100px;
+    box-shadow:1px 1px 2px  #000000;
+}
+.row.experience {
+    text-align: left;
+    background-color: #ffffff;
+    border-radius: 8px !important;
+    border:1px solid #ffffff;
+    margin: 100px 0px 100px 100px;
+    box-shadow:1px 1px 2px  #000000;
 }

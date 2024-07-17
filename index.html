@@ -28,32 +28,39 @@
                 <a class="navbar-brand" href="#">
                     <img src="./asset/images/logo.png" alt="Alison">
                 </a>
-                <div class="d-flex menu-wrap">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                  </svg>
+                <div class="d-flex menu-wrap" id="navbar">
                     <ul class="nav">
-                        <li class="nav-item ">
-                            <a class="nav nav-link" href="#">Home</a>
+                        <li class="nav-item">
+                            <a class="nav" href="#section1">Home</a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav nav-link" href="#">About</a>
+                        <li class="nav-item">
+                            <a class="nav" href="#section2">About Me</a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav nav-link" href="#">Services</a>
+                        <li class="nav-item">
+                            <a class="nav" href="#section3">Skills</a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav nav-link" href="#">Portfolio</a>
+                        <li class="nav-item">
+                            <a class="nav" href="#section4">Portfolio</a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav nav-link" href="#">Blog</a>
+                        <li class="nav-item">
+                            <a class="nav" href="#section5">Experience</a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav nav-link" href="#">Contact</a>
+                        <li class="nav-item">
+                            <a class="nav" href="#section6">Services</a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav" href="#section7">Contact</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+    
+    
 
     <section id="section1" class="d-flex align-items-center justify-content-center">
         <div class="container">
@@ -569,12 +576,26 @@
 
 
     <!-- ------------------------Section7-------------------------------------------->
-     <section id="section7" class="mt-5">
-        <div class="container">
-            <div class="box"></div>
+    <section id="section7">
+        <div class="container section7">
+            <form id="contactForm">
+                <h2>Contact Me</h2>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
         </div>
-
-
+    </section>
                                 
      
 

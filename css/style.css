@@ -29,16 +29,63 @@ body{
 
 }
 /*================================================================== navbar=============================================================== */
-.navbar{
+.navbar {
     background-color: var(--colour--black);
+    position: relative;
 }
 
-a.nav{
-    color:white
+.nav a {
+    display: block;
+    padding: 20px;
+    color: #ffffff; /* สีปกติ */
+    text-decoration: none;
+    transition: color 0.3s;
 }
-a.nav:hover{
-    color:#ff4c4c
+
+.nav a:hover {
+    color: #ff4c4c; /* สีเมื่อ hover */
 }
+
+.nav a.active {
+    color: #ff4c4c; /* สีเมื่อคลิกและคงไว้ */
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--bg-main-color);
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 568px) {
+    #menu-icon {
+        display: block;
+    }
+    .menu-wrap {
+        display: none;
+        flex-direction: column;
+    }
+    .menu-wrap.active {
+        display: flex;
+    }
+    .nav-item {
+        width: 100%;
+    }
+    p.line {
+        font-family: var(--body-font);
+        font-size: var(--h2-font-size);
+        font-weight: bold;
+        text-decoration: var(--bg-main-color) underline;   
+        border-right: solid 4px var(--bg-main-color);
+        overflow: hidden;
+        width: 10ch;
+        animation: typewriter 2s steps(10) 0.1s , cursor .5s steps(11) infinite alternate-reverse;
+        
+    }
+
+}
+
+
 /*================================================================== section 1=============================================================== */
 #section1 {
     background-image: linear-gradient(to bottom, var(--colour--black) , var(--colour-nav) , var(--text-detail-colour));
@@ -108,6 +155,21 @@ a.nav:hover{
 .img-bg img {
     display: flex;
     margin-right: 0px;
+
+}
+@media (max-width: 768px) {
+
+    p.line {
+        font-family: var(--body-font);
+        font-size: var(--h3-font-size);
+        font-weight: bold;
+        text-decoration: var(--bg-main-color) underline;   
+        border-right: solid 4px var(--bg-main-color);
+        overflow: hidden;
+        width: 10ch;
+        animation: typewriter 2s steps(10) 0.1s , cursor .5s steps(11) infinite alternate-reverse;
+        
+    }
 
 }
 /*================================================================== section 2 About me=============================================================== */
@@ -448,4 +510,68 @@ img[alt="img"]:hover {
     background-color:#ffffff;
     transition: 0.3s;
     border: 2px solid #ff4c4c;
+}
+
+
+/* section7 */
+#section7 {
+    background-color: #191919;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.container.section7 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+#contactForm {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    color: #191919;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #191919;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff4c4c;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #e04444;
 }

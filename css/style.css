@@ -4,17 +4,18 @@
 
 :root {
     /* font-size */
-   --body-font: "Roboto", sans-serif;
-   --nav-font-size: 1.5rem;
-   --nav-font-size1: 1rem;
-   --h1-font-size: 7.25rem;
-   --h2-font-size: 2.75rem;
-   --h3-font-size: 1.75rem;
-   --text-font-size: 1rem;
-   --text-buttons-font-size: .75rem;
+    --title-font:"Roboto Slab", serif;
+   --body-font:   "Signika Negative", sans-serif;
+   --head-size:7.25rem;
+   --title-size:5rem;
+   --topic-size:2rem;
+   --detail-size:1rem;
+
+
+
    /* colour */
 
-   --bg-main-color:#ff4c4c;
+   --bg-main-color:#ff4c4c;;
    --text-detail-colour:#2f3030;
    --colour-gray:#777;
    --colour--black:#050505;
@@ -26,28 +27,40 @@
 /* Switch button */
 body{
     display:contents;
+    font-family: var(--body-font);
 
 }
+h2.title {
+     font-family: var(--title-font);
+     font-size: var(--title-size);
+     font-weight: bolder;
+     color: var(--bg-main-color);
+}
+
 /*================================================================== navbar=============================================================== */
-.navbar {
+
+.navbar.navbar-expand-sm {
     background-color: var(--colour--black);
     position: relative;
 }
 
-.nav a {
+.nav {
+    font-family: var(--body-font);
+    font-size: var(--detail-size);
     display: block;
     padding: 20px;
     color: #ffffff; /* สีปกติ */
     text-decoration: none;
     transition: color 0.3s;
+    font-weight: lighter;
 }
 
-.nav a:hover {
-    color: #ff4c4c; /* สีเมื่อ hover */
+.nav:hover {
+    color: var(--bg-main-color); /* สีเมื่อ hover */
 }
 
-.nav a.active {
-    color: #ff4c4c; /* สีเมื่อคลิกและคงไว้ */
+.nav.active {
+    color: var(--bg-main-color); /* สีเมื่อคลิกและคงไว้ */
 }
 
 #menu-icon {
@@ -57,35 +70,9 @@ body{
     cursor: pointer;
 }
 
-@media (max-width: 568px) {
-    #menu-icon {
-        display: block;
-    }
-    .menu-wrap {
-        display: none;
-        flex-direction: column;
-    }
-    .menu-wrap.active {
-        display: flex;
-    }
-    .nav-item {
-        width: 100%;
-    }
-    p.line {
-        font-family: var(--body-font);
-        font-size: var(--h2-font-size);
-        font-weight: bold;
-        text-decoration: var(--bg-main-color) underline;   
-        border-right: solid 4px var(--bg-main-color);
-        overflow: hidden;
-        width: 10ch;
-        animation: typewriter 2s steps(10) 0.1s , cursor .5s steps(11) infinite alternate-reverse;
-        
-    }
-
+button.navbar-toggler {
+    stroke: #ffffff;
 }
-
-
 /*================================================================== section 1=============================================================== */
 #section1 {
     background-image: linear-gradient(to bottom, var(--colour--black) , var(--colour-nav) , var(--text-detail-colour));
@@ -100,7 +87,7 @@ body{
     color: white; 
 }
 .text-b,.text-r {
-    font-family: var(--body-font);
+    font-family: var(--title-font);
     font-size: var(--text-font-size);
 }
 .text-b {
@@ -111,21 +98,21 @@ body{
 .text-r {
     font-weight: normal;
 }
-.line {
-    font-family: var(--body-font);
-    font-size: var(--h1-font-size);
+.home-typing {
+    font-family: var(--title-font);
+    font-size: var(--head-size);
     font-weight: bold;
     text-decoration: var(--bg-main-color) underline;   
     border-right: solid 4px var(--bg-main-color);
     overflow: hidden;
-    width: 10ch;
-    animation: typewriter 2s steps(10) 0.1s , cursor .5s steps(11) infinite alternate-reverse;
+    width: 12ch;
+    animation: typewriter 2s steps(12) 0.1s , cursor .5s steps(13) infinite alternate-reverse;
     
 }
 /* Typing animate */
 @keyframes  typewriter {
     0%{width: 0ch;}
-    100%{width: 10ch;}  
+    100%{width: 11ch;}  
 }
 @keyframes cursor{
     0% {border-color: transparent ;}
@@ -142,54 +129,28 @@ body{
     width: 24px;
     height: 24px;  
 }
-.underline{
-    width: 144px;
-    height: 4px;
-    background-color: var(--bg-main-color);
-}
-.underline1{
-    width: 50%;
-    height: 4px;
-    background-color: var(--bg-main-color);
-}
+
 .img-bg img {
     display: flex;
     margin-right: 0px;
 
 }
-@media (max-width: 768px) {
-
-    p.line {
-        font-family: var(--body-font);
-        font-size: var(--h3-font-size);
+@media (max-width: 568px) {
+    p.home-typing {
+        font-family: var(--title-font);
+        font-size: var(--title-size);
         font-weight: bold;
         text-decoration: var(--bg-main-color) underline;   
         border-right: solid 4px var(--bg-main-color);
         overflow: hidden;
-        width: 10ch;
-        animation: typewriter 2s steps(10) 0.1s , cursor .5s steps(11) infinite alternate-reverse;
-        
+        width: 12ch;
+        animation: typewriter 2s steps(12) 0.1s , cursor .5s steps(13) infinite alternate-reverse;
     }
-
 }
+
+
 /*================================================================== section 2 About me=============================================================== */
-#section2{
-    font-family: var(--body-font);
-}
-.about-me { text-decoration: var(--bg-main-color) underline; 
 
-}
-.info {
-    font-weight: bolder;
-}
-.infodetail {
-    font-weight: normal;
-}
-.text-about-me{
-    font-family: var(--body-font);
-    font-size: var(--text-font-size);
-    font-weight: normal;
-}
 .button {
     position: absolute;
     display: inline;
@@ -212,7 +173,7 @@ body{
     margin: 8px 8px 8px 8px;
     color: #ffffff;
     display: inline-block;
-    background: #ff4c4c;
+    background: var(--bg-main-color);
     font-weight: 800;
     font-size: .85em;
     text-transform: uppercase;
@@ -220,7 +181,7 @@ body{
     position: relative;
 }
 .btn:hover{
-    color: #ff4c4c;
+    color: var(--bg-main-color);
     background-color:white;
 }
 
@@ -228,10 +189,7 @@ body{
 
 /*================================================================== section 3 skills=============================================================== */
 
-.skill {
-    text-decoration: var(--bg-main-color) underline;  
-    
-}
+
 .box {
     display: flex;
     flex-direction: column;
@@ -310,9 +268,7 @@ width:110px;
     color: #ffffff;
 }
 
-.portfolio {
-    text-decoration: var(--bg-main-color) underline;   
-}
+
 .portfolio-thumb img {
     width: 100%;
 }
@@ -347,9 +303,7 @@ a, a:hover, .overlay, img{
     -o-transition: all 0.5s;
     transition: all 0.5s;
 }
-a, a:hover {
-    text-decoration: none;
-}
+
 img[alt="img"]:hover {
     -webkit-transform: scale(.9);
     -moz-transform: scale(.9);
@@ -373,21 +327,21 @@ img[alt="img"]:hover {
     margin: 8px;
     color: #ffffff;
     display: inline-block;
-    background: #ff4c4c;
+    background: var(--bg-main-color);
     font-weight: 800;
     font-size: .85em;
     text-transform: uppercase;
     text-align: center;
     position: relative;
-    border: 1px solid #ff4c4c; /* เพิ่ม border สีแดง */
+    border: 1px solid var(--bg-main-color); /* เพิ่ม border สีแดง */
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .responsive-button:hover {
-    color: #ff4c4c;
+    color: var(--bg-main-color);
     background-color: white;
-    border-color: #ff4c4c; /* เปลี่ยน border เป็นสีแดงเมื่อ hover */
+    border-color: var(--bg-main-color); /* เปลี่ยน border เป็นสีแดงเมื่อ hover */
 }
 
 /*================================================================== section 5 experience =============================================================== */
@@ -396,9 +350,7 @@ img[alt="img"]:hover {
     position: relative;
 }
 
-.underline-text {
-    text-decoration: underline #ff4c4c;
-}
+
 .timeline-items-ed
 {
     max-width: 100%;
@@ -456,7 +408,7 @@ img[alt="img"]:hover {
     position: absolute;
     width: 2px;
     height: 100%;
-    background-color: #ff4c4c;
+    background-color: var(--bg-main-color);
     right: 100%;
  
 }
@@ -473,12 +425,12 @@ img[alt="img"]:hover {
   
     margin-top: 10px;
     margin-left: 40px;
-    box-shadow:0px 1px 2px   #ff4c4c;
+    box-shadow:0px 1px 2px   var(--bg-main-color);
 }
 .timeline-dot {
     width: 16px;
     height: 16px;
-    background-color: #ff4c4c;
+    background-color: var(--bg-main-color);
     border-radius: 50%;
     position: absolute;
     right: 99%;
@@ -499,19 +451,69 @@ img[alt="img"]:hover {
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
     margin:10px;
     color: #b1b1b1;
+
 }
 
 .service-title{
-    color: #ff4c4c;
+    color: var(--bg-main-color);
     
 }
 .servic-box:hover{
-    color: #ff4c4c;
+    color: var(--bg-main-color);
     background-color:#ffffff;
     transition: 0.3s;
-    border: 2px solid #ff4c4c;
+    border: 2px solid var(--bg-main-color);
 }
 
+
+/* section7 */
+#section7 {
+    background-color: #191919;
+    padding: 50px 0;
+}
+
+.section7 {
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    margin: 0 10px; /* Adjust the spacing between icons */
+}
+
+.contact-details {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-details > span.contact-me {
+    text-align: center;
+    margin: 20px 20px;
+    color: #ffffff; /* Adjust the spacing between contact details */
+}
+
+.contact-details > span > a {
+    text-align: center;
+    margin:8px;
+    color: var(--bg-main-color);
+    /* Adjust the spacing between contact details */
+}
 
 /* section7 */
 #section7 {
@@ -519,59 +521,6 @@ img[alt="img"]:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+
     width: 100%;
-}
-
-.container.section7 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-}
-
-#contactForm {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    color: #191919;
-    text-align: center;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #191919;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #ff4c4c;
-    border: none;
-    border-radius: 5px;
-    color: #ffffff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button[type="submit"]:hover {
-    background-color: #e04444;
 }

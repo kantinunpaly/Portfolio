@@ -73,7 +73,14 @@ document.querySelectorAll('.nav').forEach(function(element) {
   });
 });
 });
-
+document.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 0) {
+        navbar.style.backgroundColor = '#050505';
+    } else {
+        navbar.style.backgroundColor = 'transparent';
+    }
+});
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('.navbar-nav .nav');
 window.onscroll = () => {

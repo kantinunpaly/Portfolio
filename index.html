@@ -37,7 +37,7 @@
 <body>
     <!-----------------------------------------------------------HEADER--------------------------------------------------------->
     <header class="fixed-top">
-        <nav class="navbar navbar-expand-sm">
+        <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand pt-3" href="#">
                     <img src="./asset/images/logokanti.png" alt="Alison" width="200px" height="50px" >
@@ -47,10 +47,10 @@
                         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
                     </svg>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="collapse navbar-collapse" id="navbarNav" style="background-color:transparent;">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav active" href="#section1">Home</a>
+                            <a class="nav active"  style="background-color:transparent;" href="#section1">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav" href="#section2">About Me</a>
@@ -122,7 +122,7 @@
     <section id="section2" class="">
         <div class="container-fluid mt-5-md">
             <div class="row align-items-center ">
-                <div class="col-md-6 col-12 ms-0 px-5">
+                <div class="col-md-6 order-md-1 order-2 col-12 ms-0 px-5">
                     <h2 class="about-me pt-5 title">About Me</h2>
                     <h3 class="text-profile" style="text-transform: capitalize;">I'm junior web Developer</h3>
                     <p class="text-about-me  text-left">Hello! My name is Kantinun, and I'm a passionate Front-End
@@ -131,24 +131,49 @@
                         experiences.</p>
                     <div class="Personal Details">
                         <div class="row  ">
-                            <div class="col-md-4 col-sm-4 col-5 info">
-                                <p style="font-weight: bolder;">Full Name</p>
+                            <div class="col-2 info">
+                                <p style="font-weight: bolder;">Name</p>
+                            </div>
+                            <div class="col-10 ps-4">
+                                <p>Kantinun Aunruean</p>
+                            </div>
+                        </div>
+                        <div class="row  ">
+                            <div class="col-2 info">
                                 <p style="font-weight: bolder;">Age</p>
+                            </div>
+                            <div class="col-10 ps-4">
+                                <p>21 years</p>
+                            </div>
+                        </div>
+                        <div class="row  ">
+                            <div class="col-2 info">
                                 <p style="font-weight: bolder;">Address</p>
-                                <p style="font-weight: bolder;">Phone Number</p>
+                            </div>
+                            <div class="col-10 ps-4">
+                                <p>Ratchaburi Mueang 70000</p>
+                            </div>
+                        </div>
+                        <div class="row  ">
+                            <div class="col-2 info">
+                                <p style="font-weight: bolder;">Phone</p>
+                            </div>
+                            <div class="col-10 ps-4">
+                                <p>0656529763</p>
+                            </div>
+                        </div>
+
+                        <div class="row  ">
+                            <div class="col-2 info">
                                 <p style="font-weight: bolder;">Email</p>
                             </div>
-                            <div class="col-md-8 col-sm-8 col-7 infodetail">
-                                <p>Kantinun Aunruean</p>
-                                <p>21 years</p>
-                                <p>Ratchaburi Mueang 70000</p>
-                                <p>0656529763</p>
+                            <div class="col-10 ps-4">
                                 <p>kantinun.aun@gmail.com</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-12 mt-0 me-0 ms-0 g-0">
+                <div class="col-md-6 col-12  order-md-2 order-1 mt-0 me-0 ms-0 g-0">
                     <img src="./asset/images/Profile.jpeg" alt="Profile" class="img-fluid w-100" id="profileImage">
                 </div>
             </div>
@@ -158,155 +183,159 @@
     </section>
 
     <!-- ------------------------Section3-------------------------------------------->
-    <section id="section3" class="mt-5">
-        <div class="container mt-5-sm">
-            <div class="d-flex mt-5 mb-3 justify-content-center">
-                <h2 class="text-center skill title">Skills</h2>
+    <section id="section3" class="">
+        <div class="container-fluid mt-5-sm">
+            <div class="d-flex mt-5 mb-3 justify-content-center position-relative">
+                <h2 class="text-center skill-title">Skills</h2>
+                <div class="red-line"></div>
+                </div>
+                
             </div>
+            <div class="container mt-5-sm">
             <div class="row percent ">
-                <div class="col-md-6 ">
-                    <h3 class="">Programing</h3>
-                    <div class="row align-items-center mb-2">
-                        <div class="col-md-2  col-sm-3 me-2-sm mb-1 text-center">
+                <div class="col-md-6 Programing">
+                    <h3 class="text-center"></h3>
+                    <div class="row align-items-center  chart">
+                        <div class="col-2    text-center">
                             <img src="./asset/images/html.svg" alt="HTML" class="icon-skill pb-3-sm">
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-10">
                             <div class="skillbar clearfix" data-percent="80%">
                                 <div class="skillbar-title"><span>HTML5</span></div>
-                                <div class="skillbar-bar" style="background:#191919;"></div>
+                                <div class="skillbar-bar" style="background:#f16529;"></div>
                                 <div class="skill-bar-percent">80%</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row align-items-center mb-2">
-                        <div class="col-md-2  col-sm-3 me-2-sm mb-1  text-center">
+                    <div class="row align-items-center  chart">
+                        <div class="col-2   text-center">
                             <img src="./asset/images/css.svg" alt="css" class="icon-skill">
                         </div>
-                        <div class="col-md-10  ">
+                        <div class="col-10  ">
                             <div class="skillbar clearfix" data-percent="70%">
                                 <div class="skillbar-title"><span>CSS</span></div>
-                                <div class="skillbar-bar" style="background:#191919;"></div>
+                                <div class="skillbar-bar" style="background:#257ebe;"></div>
                                 <div class="skill-bar-percent">60%</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row align-items-center mb-2">
-                        <div class="col-md-2  col-sm-3 me-2-sm mb-1  text-center">
+                    <div class="row align-items-center  chart">
+                        <div class="col-2    text-center">
                             <img src="./asset/images/js.svg" alt="js" class="icon-skill">
                         </div>
-                        <div class="col-md-10  ">
+                        <div class="col-10  ">
                             <div class="skillbar clearfix" data-percent="60%">
                                 <div class="skillbar-title"><span>JavaScript</span></div>
-                                <div class="skillbar-bar" style="background:#191919;"></div>
+                                <div class="skillbar-bar" style="background:#ffca28;"></div>
                                 <div class="skill-bar-percent">60%</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row align-items-center mb-2">
-                        <div class="col-md-2  col-sm-3 me-2-sm mb-1  text-center">
+                    <div class="row align-items-center  chart">
+                        <div class="col-2   text-center">
                             <img src="./asset/images/sql.svg" alt="sql" class="icon-skill">
                         </div>
-                        <div class="col-md-10  ">
+                        <div class="col-10  ">
                             <div class="skillbar clearfix" data-percent="50%">
                                 <div class="skillbar-title"><span>SQL</span></div>
-                                <div class="skillbar-bar" style="background:#191919;"></div>
+                                <div class="skillbar-bar" style="background:#00bcf2;"></div>
                                 <div class="skill-bar-percent">50%</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row align-items-center mb-2">
-                        <div class="col-md-2  col-sm-3 me-2-sm mb-1  text-center">
+                    <div class="row align-items-center  chart">
+                        <div class="col-2   text-center">
                             <img src="./asset/images/python.svg" alt="python" class="icon-skill">
                         </div>
-                        <div class="col-md-10  ">
+                        <div class="col-10  ">
                             <div class="skillbar clearfix" data-percent="40%">
                                 <div class="skillbar-title"><span>Python</span></div>
-                                <div class="skillbar-bar" style="background:#191919;"></div>
+                                <div class="skillbar-bar" style="background:#fbcc14;"></div>
                                 <div class="skill-bar-percent">40%</div>
                             </div>
                         </div>
                     </div>
 
                 </div>
-                <div class="col-md-6 ">
-                    <h3 class="">Tools</h3>
-                    <div class="row align-items-center mb-2">
-                        <div class="col-md-2  col-sm-3 me-2-sm mb-1  text-center">
+                <div class="col-md-6 tool px-0-sm">
+                    <h3 class="text-center"></h3>
+                    <div class="row align-items-center  chart px-0-sm">
+                        <div class="col-2   text-center">
                             <img src="./asset/images/vs.svg" alt="vs" class="icon-skill">
                         </div>
-                        <div class="col-md-10 ">
+                        <div class="col-10 ">
                             <div class="skillbar clearfix" data-percent="100%">
                                 <div class="skillbar-title"><span>Visual Studio Code</span></div>
-                                <div class="skillbar-bar" style="background:#191919;"></div>
+                                <div class="skillbar-bar" style="background:#2fadef;"></div>
                                 <div class="skill-bar-percent">100%</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row align-items-center mb-2">
-                        <div class="col-md-2  col-sm-3 me-2-sm mb-1  text-center">
+                    <div class="row align-items-center  chart">
+                        <div class="col-2   text-center">
                             <img src="./asset/images/postgresql.svg" alt="postgresql" class="icon-skill">
                         </div>
-                        <div class="col-md-10  ">
+                        <div class="col-10  ">
                             <div class="skillbar clearfix" data-percent="40%">
                                 <div class="skillbar-title"><span>postgresql</span></div>
-                                <div class="skillbar-bar" style="background:#191919;"></div>
+                                <div class="skillbar-bar" style="background:#336791;"></div>
                                 <div class="skill-bar-percent">40%</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row align-items-center mb-2">
-                        <div class="col-md-2  col-sm-3 me-2-sm mb-1  text-center">
+                    <div class="row align-items-center  chart">
+                        <div class="col-2   text-center">
                             <img src="./asset/images/bootstrap.svg" alt="bootstrap" class="icon-skill">
                         </div>
-                        <div class="col-md-10  ">
+                        <div class="col-10  ">
                             <div class="skillbar clearfix" data-percent="70%">
                                 <div class="skillbar-title"><span>Bootstrap</span></div>
-                                <div class="skillbar-bar" style="background:#191919;"></div>
+                                <div class="skillbar-bar" style="background:#712cf9;"></div>
                                 <div class="skill-bar-percent">70%</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row align-items-center mb-2">
-                        <div class="col-md-2  col-sm-3 me-2-sm mb-1  text-center">
+                    <div class="row align-items-center  chart">
+                        <div class="col-2   text-center">
                             <img src="./asset/images/canva.svg" alt="canva" class="icon-skill">
                         </div>
-                        <div class="col-md-10  ">
+                        <div class="col-10  ">
                             <div class="skillbar clearfix" data-percent="70%">
                                 <div class="skillbar-title"><span>Canva</span></div>
-                                <div class="skillbar-bar" style="background:#191919;"></div>
+                                <div class="skillbar-bar" style="background:#42c0d8;"></div>
                                 <div class="skill-bar-percent">60%</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row align-items-center mb-2">
-                        <div class="col-md-2  col-sm-3 me-2-sm mb-1  text-center">
+                    <div class="row align-items-center  chart">
+                        <div class="col-2   text-center">
                             <img src="./asset/images/figma.svg" alt="figma" class="icon-skill">
                         </div>
-                        <div class="col-md-10  ">
+                        <div class="col-10  ">
                             <div class="skillbar clearfix" data-percent="80%">
                                 <div class="skillbar-title"><span>Figma</span></div>
-                                <div class="skillbar-bar" style="background:#191919;"></div>
+                                <div class="skillbar-bar" style="background:#0acf83;"></div>
                                 <div class="skill-bar-percent">80%</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row align-items-center  mb-2 ">
-                        <div class="col-md-2  col-sm-3 me-2-sm mb-1  text-center">
+                    <div class="row align-items-center  chart ">
+                        <div class="col-2   text-center">
                             <img src="./asset/images/xd.svg" alt="xd" class="icon-skill ">
                         </div>
-                        <div class="col-md-10  ">
+                        <div class="col-10  ">
                             <div class="skillbar clearfix" data-percent="60%">
                                 <div class="skillbar-title"><span>Adobe XD</span></div>
-                                <div class="skillbar-bar" style="background:#191919;"></div>
+                                <div class="skillbar-bar" style="background:#ff61f6;"></div>
                                 <div class="skill-bar-percent">60%</div>
                             </div>
                         </div>
@@ -774,8 +803,8 @@
                     </div>
                 </div>
                 <div class="contact-details">
-                    <span class="contact-me">Phone:<a href="#" class="contact-me">065-6529763</a></span>
-                    <span class="contact-me">Email:<a href="#" class="contact-me">kantinun.aun@gmail.com</a></span>
+                    <span class="contact-me">Phone:<a href="tel:0656529763" class="contact-me">065-6529763</a></span>
+                    <span class="contact-me">Email:<a href="mailto:kantinun.aun@gmail.com" class="contact-me">kantinun.aun@gmail.com</a></span>
                 </div>
             </div>
  

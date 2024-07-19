@@ -1,13 +1,25 @@
 $(document).ready(function(){
 
     // jQuery methods go here...
+    
+
 
   
-    $("img").click(function(){
-      var img=$(this).attr('src');
-        $("#show-img").attr('src',img);
-        $("#imgmodal").modal('show');
-   });
+    // $(document).ready(function(){
+    //     $(".portfolio-thumb").click(function(){
+    //         var imgSrc = $(this).attr("data-src");
+    //         $("#show-img").attr("src", imgSrc);
+    //         $("#imgmodal").modal("show");
+    //     });
+    // });
+    
+
+
+
+
+
+
+   
   jQuery(document).ready(function() {
             function animateSkillBars() {
                 jQuery('.skillbar').each(function() {
@@ -39,61 +51,85 @@ $(document).ready(function(){
         alert('Please fill out all fields.');
     }
 });
-document.querySelectorAll('.nav').forEach(function(element) {
-  element.addEventListener('click', function(e) {
-      e.preventDefault(); // ป้องกันการนำทางไปยังลิงก์ทันที
-
-      // ลบ class 'active' จากทุกลิงก์
-      document.querySelectorAll('.nav').forEach(function(nav) {
-          nav.classList.remove('active');
-      });
-
-      // เพิ่ม class 'active' ให้กับลิงก์ที่คลิก
-      element.classList.add('active');
-
-      // เลื่อนหน้าจอไปยัง section ที่ต้องการโดยเว้นระยะ 300px
-      let targetId = element.getAttribute('href').substring(1);
-      let targetSection = document.getElementById(targetId);
-      let offsetTop = targetSection.offsetTop - 100;
-
-      window.scrollTo({
-          top: offsetTop,
-          behavior: 'smooth'
-      });
-
-      // ปิดแถบการนำทางในโหมด responsive
-      if (window.innerWidth <= 576) {
-          let navbarToggler = document.querySelector('.navbar-toggler');
-          let navbarCollapse = document.querySelector('#navbarNav');
-
-          if (navbarCollapse.classList.contains('show')) {
-              navbarToggler.click();
-          }
-      }
-  });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle navigation link clicks
+    document.querySelectorAll('.nav').forEach(function(element) {
+        element.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent immediate navigation
+
+            // Remove 'active' class from all links
+            document.querySelectorAll('.nav').forEach(function(nav) {
+                nav.classList.remove('active');
+            });
+
+            // Add 'active' class to the clicked link
+            element.classList.add('active');
+
+            // Scroll to the target section with an offset
+            let targetId = element.getAttribute('href').substring(1);
+            let targetSection = document.getElementById(targetId);
+            let offsetTop = targetSection.offsetTop-100;
+
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+
+            // Close the navbar in responsive mode
+            if (window.innerWidth <= 576) {
+                let navbarToggler = document.querySelector('.navbar-toggler');
+                let navbarCollapse = document.querySelector('#navbarNav');
+
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarToggler.click();
+                }
+            }
+        });
+    });
+
+    // Handle scroll events
+    document.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        const backToTopButton = document.getElementById("back-to-top");
+
+        // Change navbar background color on scroll
+        if (window.scrollY > 0) {
+            navbar.style.backgroundColor = '#050505';
+        } else {
+            navbar.style.backgroundColor = 'transparent';
+        }
+
+        // Show or hide back to top button
+        if (window.scrollY > 20) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+
+        // Highlight the active section in the navbar
+        let sections = document.querySelectorAll('section');
+        let navLinks = document.querySelectorAll('.navbar-nav .nav');
+
+        sections.forEach(sec => {
+            let top = window.scrollY;
+            let offset = sec.offsetTop - 90;
+            let height = sec.offsetHeight;
+            let id = sec.getAttribute('id');
+            if (top >= offset && top < offset + height) {
+                navLinks.forEach(links => {
+                    links.classList.remove('active');
+                    document.querySelector('.navbar-nav .nav[href*=' + id + ']').classList.add('active');
+                });
+            }
+        });
+    });
+
+    // Scroll to top functionality
+    document.getElementById("back-to-top").addEventListener("click", function() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
 });
-document.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 0) {
-        navbar.style.backgroundColor = '#050505';
-    } else {
-        navbar.style.backgroundColor = 'transparent';
-    }
-});
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('.navbar-nav .nav');
-window.onscroll = () => {
-  sections.forEach(sec => {
-      let top = window.scrollY;
-      let offset = sec.offsetTop - 150; // เพิ่มระยะเว้น 300px
-      let height = sec.offsetHeight;
-      let id = sec.getAttribute('id');
-      if(top >= offset && top < offset + height) {
-          navLinks.forEach(links => {
-              links.classList.remove('active');
-              document.querySelector('.navbar-nav .nav[href*=' + id + ']').classList.add('active');
-          });
-      }
-  });
-};

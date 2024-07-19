@@ -11,6 +11,7 @@
    --subhead-size:5rem;
    --subtitle-size:3rem;
    --topic-size:2rem;
+   --subtopic-size:1.5rem;
    --detail-size:1rem;
 
 
@@ -30,6 +31,7 @@
 body{
     display:contents;
     font-family: var(--body-font);
+    font-size: var(--detail-size);
 
 }
 h2.title {
@@ -180,40 +182,9 @@ button.navbar-toggler {
 
 /*================================================================== section 2 About me=============================================================== */
 
-.button {
-    position: absolute;
-    display: inline;
-    font-family: var(--body-font);
-    font-size: var(--text-buttons-font-size);
-    font-weight: bold;
-    background-color: var(--bg-main-color);
-    color: white;
-    padding:12px;
-    border: solid 1px var(--bg-main-color);
-    left: 400px;
-    
+h3.text-profile{
+    font-size: var(--topic-size);
 }
-
-
-.btn {
-    padding: 1em 2.1em 1.1em;
-
-    border-radius: 3px;
-    margin: 8px 8px 8px 8px;
-    color: #ffffff;
-    display: inline-block;
-    background: var(--bg-main-color);
-    font-weight: 800;
-    font-size: .85em;
-    text-transform: uppercase;
-    text-align: center;
-    position: relative;
-}
-.btn:hover{
-    color: var(--bg-main-color);
-    background-color:white;
-}
-
 /* เพิ่มเติม css อื่น ๆ ที่ต้องการได้ */
 
 /*================================================================== section 3 skills=============================================================== */
@@ -287,18 +258,61 @@ button.navbar-toggler {
     border-radius: 50px;
 }
 /*================================================================== section 4 portfolio =============================================================== */
-#section4 {
-    background-color: var(--colour-nav);
-    color: #ffffff;
+body.modal-open {
+    overflow: hidden;
 }
 
+#section4 {
+    background-color: var(--colour-nav);
+    color: var(--colour-nav);
+    text-align: center;
+    font-size: var(--topic-size);
+}
+
+.modal.modal-full .modal-dialog {
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100% - 1rem);
+}
+
+.modal.modal-full .modal-content {
+    height: 80vh; /* ปรับความสูง modal ให้เหมาะสม */
+    border: none;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modal.modal-full .modal-body {
+    overflow-y: auto;
+}
+
+.modal.modal-full .modal-header,
+.modal.modal-full .modal-footer {
+    border: none;
+    display: flex;
+    justify-content: center;
+}
+
+.modal.modal-full .modal-title {
+    flex: 1;
+    text-align: center;
+    color: var(--bg-main-color);
+    font-size: var(--topic-size);
+}
 
 .portfolio-thumb img {
     width: 100%;
 }
+
 .portfolio-box {
-    position: relative; /* เพิ่มตำแหน่งสำหรับการวางตำแหน่งลูก */
+    position: relative;
 }
+
 .portfolio-box .hover {
     position: absolute;
     width: 100%;
@@ -308,12 +322,14 @@ button.navbar-toggler {
     opacity: 0;
     visibility: hidden;
     padding: 15px;
-    transition: all 0.5s; /* เพิ่ม transition สำหรับการเปลี่ยนแปลง */
+    transition: all 0.5s;
 }
-.portfolio-box:hover .hover { 
+
+.portfolio-box:hover .hover {
     opacity: 1;
     visibility: visible;
 }
+
 .portfolio-box .hover div {
     background-color: rgba(255, 255, 255, 0.9);
     display: flex;
@@ -322,10 +338,38 @@ button.navbar-toggler {
     width: 100%;
     height: 100%;
 }
-a, a:hover, .overlay, img{
+
+a,
+a:hover,
+.overlay,
+img {
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+.portfolio-box > img[alt="img"]:hover {
+    -webkit-transform: scale(.9);
+    -moz-transform: scale(.9);
+    -o-transform: scale(.9);
+    transform: scale(.9);
+}
+
+.modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100% - 1rem);
+}
+
+.modal-content {
+    background: #ffffff;
+    border: none;
+    text-align: center;
+}
+
+.portfolio-clone img {
+    width: 90%;
 }
 
 img[alt="img"]:hover {
@@ -334,44 +378,27 @@ img[alt="img"]:hover {
     -o-transform: scale(.9);
     transform: scale(.9);
 }
-.modal-dialog-centered {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(100% - 1rem);
-}
-.modal-content {
-    background: transparent;
-    border: none;
-    text-align: center;
-}
-.responsive-button {
-    padding: 1em 2.1em 1.1em;
-    border-radius: 4px;
-    margin: 8px;
-    color: #ffffff;
-    display: inline-block;
-    background: var(--bg-main-color);
-    font-weight: 800;
-    font-size: .85em;
-    text-transform: uppercase;
-    text-align: center;
-    position: relative;
-    border: 1px solid var(--bg-main-color); /* เพิ่ม border สีแดง */
-    cursor: pointer;
-    transition: all 0.3s ease;
+
+.btn-secondary:hover {
+    background-color: var(--bg-main-color);
+    border: transparent;
 }
 
-.responsive-button:hover {
-    color: var(--bg-main-color);
-    background-color: white;
-    border-color: var(--bg-main-color); /* เปลี่ยน border เป็นสีแดงเมื่อ hover */
+.btn-secondary {
+    border: transparent;
 }
+
+.btn-close {
+    width: 8px;
+    height: 8px;
+}
+
 
 /*================================================================== section 5 experience =============================================================== */
 
 #section5{
     position: relative;
+   
 }
 
 
@@ -421,6 +448,17 @@ img[alt="img"]:hover {
     font-weight: bolder;
     text-align: right;
 }
+.timeline-content-ed h4 {
+    font-size: var(--topic-size);
+}
+.timeline-content-ed h5 {
+    font-size: var(--subtopic-size);
+}
+.timeline-content-ed p {
+    font-size: var(--detail-size);
+}
+
+
 .timeline-items
 {
     max-width: 100%;
@@ -449,14 +487,20 @@ img[alt="img"]:hover {
     
     background-color: #ffffff;
     padding:20px 0px 20px 20px;
-
-  
     margin-top: 10px;
     margin-left: 40px;
     border-left:2px solid var(--bg-main-color);
 
 }
-
+.timeline-content h4 {
+    font-size: var(--topic-size);
+}
+.timeline-content h5 {
+    font-size: var(--topic-size);
+}
+.timeline-content p {
+    font-size: var(--detail-size);
+}
 .timeline-date {
     font-weight: bolder;
     padding-left: 20px;
@@ -467,6 +511,7 @@ img[alt="img"]:hover {
 
 
 .servic-box {
+    
     padding: 20px;
     text-align: center;
     border-radius: 10px;
@@ -478,7 +523,11 @@ img[alt="img"]:hover {
 
 .service-title{
     color: var(--bg-main-color);
+    font-size: var(--topic-size);
     
+}
+.service-title p{
+    font-size: var(--detail-size);
 }
 .servic-box:hover{
     transition: 0.6s;
@@ -541,6 +590,69 @@ img[alt="img"]:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-
+   
     width: 100%;
 }
+/* button back to top */
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    fill:var(--bg-main-color);
+    background-color: transparent;
+    border: transparent solid;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it is above other elements */
+
+}
+
+
+
+.back-to-top svg {
+    fill:var(--bg-main-color);
+    width: 40px;
+    height: 40px;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .back-to-top {
+        bottom:20px;
+        right:20px;
+     
+    }
+
+    .back-to-top svg {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+
+    }
+
+    .back-to-top svg {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 568px) {
+    .back-to-top {
+        bottom: 10px;
+        right: 10px;
+       
+    }
+
+    .back-to-top svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/*  */
+

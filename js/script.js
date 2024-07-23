@@ -12,13 +12,6 @@ $(document).ready(function(){
     //         $("#imgmodal").modal("show");
     //     });
     // });
-    
-
-
-
-
-
-
    
   jQuery(document).ready(function() {
             function animateSkillBars() {
@@ -69,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Scroll to the target section with an offset
             let targetId = element.getAttribute('href').substring(1);
             let targetSection = document.getElementById(targetId);
-            let offsetTop = targetSection.offsetTop-100;
+            let offsetTop = targetSection.offsetTop - 100;
 
             window.scrollTo({
                 top: offsetTop,
@@ -95,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Change navbar background color on scroll
         if (window.scrollY > 0) {
-            navbar.style.backgroundColor = '#050505';
+            navbar.style.backgroundColor = '#191919';
         } else {
             navbar.style.backgroundColor = 'transparent';
         }
@@ -113,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         sections.forEach(sec => {
             let top = window.scrollY;
-            let offset = sec.offsetTop - 90;
+            let offset = sec.offsetTop - 100;
             let height = sec.offsetHeight;
             let id = sec.getAttribute('id');
             if (top >= offset && top < offset + height) {
@@ -130,6 +123,26 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({
             top: 0,
             behavior: "smooth"
+        });
+    });
+
+    // Change navbar-nav background color on click
+    let navbarToggler = document.querySelector('.navbar-toggler');
+    navbarToggler.addEventListener('click', function() {
+        document.querySelector('.navbar-nav').classList.toggle('toggled');
+    });
+
+    // Close navbar when nav item is clicked in responsive mode
+    document.querySelectorAll('.nav-item .nav').forEach(function(element) {
+        element.addEventListener('click', function() {
+            if (window.innerWidth <= 576) {
+                let navbarToggler = document.querySelector('.navbar-toggler');
+                let navbarCollapse = document.querySelector('#navbarNav');
+
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarToggler.click();
+                }
+            }
         });
     });
 });

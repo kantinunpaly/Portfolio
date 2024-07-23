@@ -20,7 +20,7 @@
 
    --bg-main-color:#ff4c4c;;
    --text-detail-colour:#2f3030;
-   --colour-gray:#777;
+   --colour-gray:#dadada;
    --colour--black:#050505;
    --colour-nav:#191919;
    --text-colour:white;
@@ -60,10 +60,11 @@ h2.title {
 
 /*================================================================== navbar=============================================================== */
 
-.navbar.navbar-expand-sm {
+.navbar.navbar-expand-lg {
     
     position: relative;
     transition: background-color 0.3s ease;
+   
 }
 
 .nav {
@@ -95,6 +96,28 @@ h2.title {
 button.navbar-toggler {
     stroke: #ffffff;
 }
+.navbar-nav .ms-auto {
+    background-color: var(--colour-nav);
+}
+
+/* Add this CSS to set the background color when the navbar is toggled */
+.navbar-toggler.collapsed {
+    background-color: transparent;
+}
+
+.navbar-toggler:not(.collapsed) {
+    background-color: var(--colour-nav);
+}
+
+/* Add this CSS to set the background color of the navbar menu when toggled */
+.navbar-nav {
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav.toggled {
+    background-color: var(--colour-nav);
+}
+
 /*================================================================== section 1=============================================================== */
 #section1 {
     background-image: linear-gradient(to bottom, var(--colour--black), var(--colour-nav), var(--text-detail-colour));
@@ -149,8 +172,8 @@ button.navbar-toggler {
 
 .social svg:hover {
     fill: var(--bg-main-color);
-    width: 24px;
-    height: 24px;
+ transform: scale(1.2);
+ transition: 0.3s;
 }
 
 .img-bg img {
@@ -188,6 +211,27 @@ h3.text-profile{
 /* เพิ่มเติม css อื่น ๆ ที่ต้องการได้ */
 
 /*================================================================== section 3 skills=============================================================== */
+#section3 {
+    padding-top: 100px !important;
+}
+.skill-title {
+    font-size: var(--title-size);
+    position: relative;
+    z-index: 2;
+    color: var(--bg-main-color); 
+    background-color: #ffffff;/* ให้มีพื้นหลังสีขาวเพื่อให้มองเห็นเส้นชัดเจนขึ้น */
+    padding: 0 15px; /* เพิ่ม padding เพื่อไม่ให้เส้นชนกับตัวอักษร */
+}
+
+.red-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 6px; /* ความหนาของเส้น */
+    background-color: var(--colour-nav);
+    z-index: 1;
+}
 
 
 .box {
@@ -202,14 +246,30 @@ h3.text-profile{
     width: 40px;
     height: 40px;
 }
+.chart {
+    margin-bottom: 60px;
+    
+    filter: grayscale();
+}
+.Programing .chart {
+    margin-right: 40px;
+}
+.tool .chart  {
+    margin-left: 40px;
+}
+.chart:hover {
+
+    filter: grayscale(0);
+    transition: 0.4s;
+}
 .skillbar {
     border-radius: 50px;
-    margin: 0px;
+
 	position:relative;
 	display:block;
 	width:100%;
-	background:#eee;
-	height:16px;
+	background:var(--colour-gray);
+	height:24px;
 	-webkit-transition:0.4s linear;
 	-moz-transition:0.4s linear;
 	-ms-transition:0.4s linear;
@@ -225,7 +285,7 @@ h3.text-profile{
 .skillbar-title {
     border-radius: 50px;
 	position:absolute;
-	top:0;
+	top:4px;
 	left:8px;
     width:110px;
 	font-weight:lighter;
@@ -237,9 +297,9 @@ h3.text-profile{
 
 .skillbar-bar {
 
-	height:16px;
+	height:24px;
 	width:0px;
-	background:#6adcfa;
+
 
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
@@ -249,15 +309,30 @@ h3.text-profile{
 .skill-bar-percent {
 	position:absolute;
 	right:10px;
-	top:0;
-	font-size:11px;
+	top:4px;
+	font-size:var(--detail-size);
 	height:16px;
 	line-height:16px;
 	color:#ffffff;
 	color:rgba(0, 0, 0, 0.8);
     border-radius: 50px;
 }
+@media (max-width: 776px) {
+    .tool .chart{
+        margin-top: 20px;
+    }
+    .tool .chart{
+        margin-right: 40px;
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+
+}
+
 /*================================================================== section 4 portfolio =============================================================== */
+#section4 {
+    margin-top: 150px !important;
+}
 body.modal-open {
     overflow: hidden;
 }

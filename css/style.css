@@ -22,7 +22,7 @@
    --text-detail-colour:#2f3030;
    --colour-gray:#dadada;
    --colour--black:#050505;
-   --colour-nav:#191919;
+   --colour-nav:rgb(25, 25, 25);
    --text-colour:white;
 
 }
@@ -204,15 +204,33 @@ button.navbar-toggler {
 
 
 /*================================================================== section 2 About me=============================================================== */
-
+#section2{
+    background-color: rgb(25, 25, 25,0.1);
+}
 h3.text-profile{
     font-size: var(--topic-size);
 }
 /* เพิ่มเติม css อื่น ๆ ที่ต้องการได้ */
+#section2 .btn-primary {
+    background-color: #ff4c4c;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    border-color: var(--bg-main-color);
+    transition: 0.5s;
+    
+}
+#section2 .btn.btn-primary:hover {
+    border-color: var(--bg-main-color);
+    background-color:transparent;
+    color: var(--colour-nav);
+
+}
 
 /*================================================================== section 3 skills=============================================================== */
 #section3 {
-    padding-top: 100px !important;
+    padding-top: 90px !important;
 }
 .skill-title {
     font-size: var(--title-size);
@@ -232,7 +250,10 @@ h3.text-profile{
     background-color: var(--colour-nav);
     z-index: 1;
 }
+.mg-sec3{
 
+    background-color: rgb(255, 255, 255);
+}
 
 .box {
     display: flex;
@@ -249,7 +270,7 @@ h3.text-profile{
 .chart {
     margin-bottom: 60px;
     
-    filter: grayscale();
+    filter:grayscale();
 }
 .Programing .chart {
     margin-right: 40px;
@@ -330,18 +351,44 @@ h3.text-profile{
 }
 
 /*================================================================== section 4 portfolio =============================================================== */
-#section4 {
-    margin-top: 150px !important;
-}
+
+
 body.modal-open {
     overflow: hidden;
 }
 
 #section4 {
+    margin-top: 150px !important;
     background-color: var(--colour-nav);
     color: var(--colour-nav);
     text-align: center;
     font-size: var(--topic-size);
+
+}
+.text-port {
+    font-size: var(--detail-size);
+    color: white;
+    padding: 0px 40px;
+}
+.btn-primary {
+    background-color:transparent;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    border-color: var(--bg-main-color);
+    transition: 0.5s;
+    
+}
+.btn.btn-primary:hover {
+    border-color: var(--bg-main-color);
+    background-color: #ff4c4c;
+
+}
+@media (max-width: 768px) {
+    .btn-primary{
+        margin-bottom: 20px;
+    }
 }
 
 .modal.modal-full .modal-dialog {
@@ -445,6 +492,7 @@ img {
 
 .portfolio-clone img {
     width: 90%;
+    margin: 20px;
 }
 
 img[alt="img"]:hover {
@@ -473,6 +521,8 @@ img[alt="img"]:hover {
 
 #section5{
     position: relative;
+    margin-top: 150px !important;
+    
    
 }
 
@@ -527,14 +577,13 @@ img[alt="img"]:hover {
     font-size: var(--topic-size);
 }
 .timeline-content-ed h5 {
-    font-size: var(--subtopic-size);
+    font-size: var(--detail-size);
 }
 .timeline-content-ed p {
     font-size: var(--detail-size);
 }
 
-
-.timeline-items
+.timeline-items h4
 {
     max-width: 100%;
     max-width: auto;
@@ -542,6 +591,16 @@ img[alt="img"]:hover {
     flex-wrap: wrap;
     position: relative;
     color: var(--bg-main-color);
+
+}
+.timeline-items
+{
+    max-width: 100%;
+    max-width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    color: var(--colour-nav);
 
 }
 .timeline-items::before{
@@ -584,15 +643,21 @@ img[alt="img"]:hover {
 
 /* ========================================================section6============================================================= */
 
-
+#section6{
+    margin-top: 150px !important; 
+    background-color: rgb(25, 25, 25,0.1);
+}
+.magin-6 {
+margin: 80px 0px 80px;
+}
 .servic-box {
-    
+    background-color: var(--colour-nav);
     padding: 20px;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0px 0px 4px 0px var(--colour-nav);
+
     margin:10px;
-    color:var(--colour-nav);
+    color:white;
 
 }
 
@@ -604,16 +669,15 @@ img[alt="img"]:hover {
 .service-title p{
     font-size: var(--detail-size);
 }
-.servic-box:hover{
-    transition: 0.6s;
-    box-shadow: 0px 0px 12px 0px var(--colour-nav);
-}
 
 
-/* section7 */
+
+
+/*============================================================== section7 =====================================================*/
 #section7 {
     background-color: #191919;
     padding: 50px 0;
+    margin-top: 150px !important;
 }
 
 .section7 {
@@ -681,7 +745,37 @@ img[alt="img"]:hover {
 
 }
 
+button.back-to-top[title] {
+    position: relative;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    fill:var(--bg-main-color);
+    background-color: transparent;
+    border: transparent solid;
+    cursor: pointer;
+    z-index: 1000;
+}
 
+button.back-to-top[title]::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+button.back-to-top:hover::after {
+    opacity: 1;
+}
 
 .back-to-top svg {
     fill:var(--bg-main-color);
@@ -728,6 +822,15 @@ img[alt="img"]:hover {
         height: 28px;
     }
 }
+.contact-me > svg {
+    fill: #bbb;
+    stroke: #191919;
+    color: #000000;;
+    width: 24px;
+    height: 24px;
+
+}
+
 
 /*  */
 

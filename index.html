@@ -10,7 +10,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+
     <link rel="stylesheet" href="./css/style.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.2/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+      integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -172,6 +183,9 @@
                             </div>
                         </div>
                     </div>
+                    <div class="text-center mt-3">
+                        <a href="./asset/images/Cv_Kantinun.pdf" id="download-cv" download class="btn btn-primary">Download CV</a>
+                    </div>
                 </div>
                 <div class="col-md-6 col-12  order-md-2 order-1 mt-0 me-0 ms-0 g-0">
                     <img src="./asset/images/Profile.jpeg" alt="Profile" class="img-fluid w-100" id="profileImage">
@@ -183,18 +197,18 @@
     </section>
 
     <!-- ------------------------Section3-------------------------------------------->
-    <section id="section3" class="">
-        <div class="container-fluid mt-5-sm">
-            <div class="d-flex mt-5 mb-3 justify-content-center position-relative">
-                <h2 class="text-center skill-title">Skills</h2>
-                <div class="red-line"></div>
-                </div>
-                
-            </div>
-            <div class="container mt-5-sm">
+    <section id="section3" class="" >
+       
+            <div class="container ">
+                <div class="d-flex mb-3 justify-content-center position-relative">
+                    <h2 class="text-center skill-title title">Skills</h2>
+                    </div>
+                    
             <div class="row percent ">
+                <div class="aos" data-aos="fade-up-right"></div>
                 <div class="col-md-6 Programing">
                     <h3 class="text-center"></h3>
+                     
                     <div class="row align-items-center  chart">
                         <div class="col-2    text-center">
                             <img src="./asset/images/html.svg" alt="HTML" class="icon-skill pb-3-sm">
@@ -259,8 +273,9 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
+
+                
                 <div class="col-md-6 tool px-0-sm">
                     <h3 class="text-center"></h3>
                     <div class="row align-items-center  chart px-0-sm">
@@ -350,6 +365,10 @@
         <div class="row align-items-center ms-5-sm mt-5-sm">
             <div class="col-md-4 col-12 ms-0">
                 <h2 class="portfolio text-center title pt-3">Portfolio</h2>
+                <p class="text-center text-port">These are the latest and standout projects in various areas, including UX/UI design and front-end development. To view more of my work, please click the link below.</p>
+                <div class="text-center mt-3 ">
+                    <a href="https://github.com/kantinunpaly"  class="btn btn-primary">Go to Github</a>
+                </div>
             </div>
             <div class="col-md-8 col-12 mt-0 me-0 ms-0 g-0">
                 <div class="grid text-center">
@@ -383,13 +402,12 @@
 <!-- --------------------------------pic modal 4------------------------------------------------------------- -->
                     <div class="row g-0">
                         <div class="col-12 col-md-4">
-                            <div class="portfolio-box">
-                                <a class="portfolio-thumb" href="#" data-toggle="modal" data-target="#imgmodal"
-                                    data-src="./asset/images/prtf-4.jpg">
-                                    <img src="./asset/images/prtf-4.jpg" alt="img" class="img-responsive">
-                                </a>
+                            <div class="portfolio-box"  data-bs-toggle="modal" data-bs-target="#staticBackdrop4">
+                                <a class="portfolio-thumb">
+                                    <img src="./asset/images/diary/1crop.png" alt="img" class="img-responsive">
+                            </a>
+                              </div>
                             </div>
-                        </div>
 <!-- --------------------------------pic modal 5------------------------------------------------------------- -->
                         <div class="col-12 col-md-4">
                             <div class="portfolio-box">
@@ -413,7 +431,7 @@
 
 <!-- --------------------------------modal 1------------------------------------------------------------- -->
 
-                <div class="modal modal-full" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade modal-full" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -455,7 +473,7 @@
                     </div>
                   </div>
 <!-- --------------------------------modal 2------------------------------------------------------------- -->
-                  <div class="modal modal-full" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal fade modal-full" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -499,7 +517,7 @@
                   </div>
 
 <!-- --------------------------------modal 3------------------------------------------------------------- -->
-<div class="modal modal-full" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade modal-full" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -554,6 +572,65 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+<!----------------------------------------------------------------------- modal 4 ------------------------------------- -->
+  <div class="modal fade modal-full" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="staticBackdropLabel">UX/UI Design</h1>
+          <button type="button" class="btn-close me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row g-0">
+                    
+                <div class="col-12 col-md-4">
+                    <div class="portfolio-clone">
+                        <a class="portfolio-clone">
+                            <img src="./asset/images/diary/1.png" alt="img-clone" class="img-responsive">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="portfolio-clone">
+                        <a class="portfolio-clone">
+                            <img src="./asset/images/diary/2.png" alt="img-clone" class="img-responsive">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="portfolio-clone">
+                        <a class="portfolio-clone">
+                            <img src="./asset/images/diary/3.png" alt="img-clone" class="img-responsive">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="portfolio-clone">
+                        <a class="portfolio-clone">
+                            <img src="./asset/images/diary/4.png" alt="img-clone" class="img-responsive">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="portfolio-clone">
+                        <a class="portfolio-clone">
+                            <img src="./asset/images/diary/5.png" alt="img-clone" class="img-responsive">
+                        </a>
+                    </div>
+                </div>
+               
             </div>
         </div>
         <div class="modal-footer">
@@ -705,10 +782,6 @@
                             </div>
                         </div>
                     </div>
-
-
-                                        
-                 
                 </div>
             </div>
         </div>
@@ -716,18 +789,23 @@
 
 
 
+
+
     <!-- ------------------------Section6-------------------------------------------->
+
+
+
     <section id="section6" class="">
         <div class="container-fluid mt-5-md">
             <div class="row align-items-center ms-5-sm">
                 <div class="col-md-4 col-12 ms-0">
                     <h2 class="portfolio text-center title">Services</h2>
                 </div>
-                <div class="col-md-8 col-12 mt-0 me-0 ms-0 g-0">
+                <div class="col-md-8 col-12 mt-0 me-0 ms-0 g-0 ">
                     <div class="grid text-center">
-                        <div class="row g-0">
+                        <div class="row g-0 magin-6">
                             
-                            <div class="col-12 col-md-6">
+                            <div class="col-12 col-md-6 ">
                                 <div class="servic-box">
                                     <div class="servic-content">
                                         <h3 class="service-title">UX/UI Design</h3>
@@ -769,7 +847,6 @@
         </div>
     </section>
 
-
     <!-- ------------------------Section7-------------------------------------------->
     <section id="section7" class="mt-5">
         <div class="container section7">
@@ -803,27 +880,40 @@
                     </div>
                 </div>
                 <div class="contact-details">
-                    <span class="contact-me">Phone:<a href="tel:0656529763" class="contact-me">065-6529763</a></span>
-                    <span class="contact-me">Email:<a href="mailto:kantinun.aun@gmail.com" class="contact-me">kantinun.aun@gmail.com</a></span>
+                    
+                    <span class="contact-me"><?xml version="1.0" ?><svg data-name="Livello 1" id="Livello_1" viewBox="0 0 66 66"  width="24" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title/><path d="M1,34A32,32,0,1,0,33,2,32,32,0,0,0,1,34Z"/><g id="Phone"><path class="cls-1" d="M34.93,40.84c1-.09,2.95-1.92,4-2a4,4,0,0,1,2.78.8l2.68,2L46,42.92a2.52,2.52,0,0,1,.43,3.62l-3.11,4a1.12,1.12,0,0,1-1,.43c-13.5-1.21-24.24-12.26-24.24-25.68a25,25,0,0,1,1-7,0.66,0.66,0,0,1,.5-0.45l5.91-.83a2.63,2.63,0,0,1,3.12,2L29,21l0.65,3.26a3.75,3.75,0,0,1-.53,2.78c-0.54.84-3.09,1.68-3.64,2.53h0A19.39,19.39,0,0,0,34.93,41V40.84Z"/></g></svg><a href="tel:0656529763" class="contact-me">065-6529763</a></span>
+                    
+                    <span class="contact-me"><?xml version="1.0" ?><svg data-name="Livello 1" id="Livello_1" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1,.cls-2{fill:none;stroke:#000000;stroke-width:2px;}.cls-1{stroke-miterlimit:10;}.cls-2{stroke-linejoin:round;}</style></defs><title/><path d="M1,33A32,32,0,1,0,33,1,32,32,0,0,0,1,33Z"/><g id="Mail"><rect class="cls-1" height="24.18" rx="1.48" ry="1.48" width="32" x="17" y="21"/><path class="cls-2" d="M48.44,21.83L37.53,33.54a6.27,6.27,0,0,1-9.07,0l-10.9-11.7"/><line class="cls-2" x1="39.19" x2="48.15" y1="31.75" y2="44.51"/><line class="cls-2" x1="26.98" x2="17.7" y1="31.88" y2="44.51"/></g></svg><a href="mailto:kantinun.aun@gmail.com" class="contact-me">kantinun.aun@gmail.com</a></span>
                 </div>
             </div>
  
     </section>
     </section>
 
-    <button id="back-to-top" class="back-to-top">
-        <svg class="" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+    <button id="back-to-top" class="back-to-top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
             <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
         </svg>
     </button>
+    
     
                                 
      
 
     <!-----------------------------------------------------------JS--------------------------------------------------------->
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+      integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="./js/jquery.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
     <script>
         AOS.init();
     </script>

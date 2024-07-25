@@ -1,17 +1,5 @@
+
 $(document).ready(function(){
-
-    // jQuery methods go here...
-    
-
-
-  
-    // $(document).ready(function(){
-    //     $(".portfolio-thumb").click(function(){
-    //         var imgSrc = $(this).attr("data-src");
-    //         $("#show-img").attr("src", imgSrc);
-    //         $("#imgmodal").modal("show");
-    //     });
-    // });
    
   jQuery(document).ready(function() {
             function animateSkillBars() {
@@ -145,4 +133,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
+document.getElementById('download-cv').addEventListener('click', function(event) {
+    event.preventDefault(); // ป้องกันการดำเนินการเริ่มต้นของลิงก์
+    var url = this.href;
+    // เปิดแท็บใหม่
+    window.open(url, '_blank');
+
+    // สร้างลิงก์ใหม่เพื่อดาวน์โหลดไฟล์
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = '';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
 });

@@ -18,7 +18,7 @@
 
    /* colour */
 
-   --bg-main-color:#ff4c4c;;
+   --bg-main-color:#ff4c4c;
    --text-detail-colour:#2f3030;
    --colour-gray:#dadada;
    --colour--black:#050505;
@@ -29,11 +29,14 @@
 /* colour */
 /* Switch button */
 body{
+    
     display:contents;
     font-family: var(--body-font);
     font-size: var(--detail-size);
 
+
 }
+
 h2.title {
      font-family: var(--title-font);
      font-size: var(--title-size);
@@ -168,6 +171,8 @@ button.navbar-toggler {
 .social svg {
     margin: 20px 16px 0 8px;
     fill: #bbb;
+    width: 28px !important;
+    height: 28px !important;
 }
 
 .social svg:hover {
@@ -230,6 +235,7 @@ h3.text-profile{
 
 /*================================================================== section 3 skills=============================================================== */
 #section3 {
+    overflow: hidden;
     padding-top: 90px !important;
 }
 .skill-title {
@@ -264,13 +270,14 @@ h3.text-profile{
     background-color: wheat;
 }
 .icon-skill {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
 }
 .chart {
     margin-bottom: 60px;
-    
-    filter:grayscale();
+}
+.chart img {
+    filter:grayscale(100%);
 }
 .Programing .chart {
     margin-right: 40px;
@@ -279,9 +286,12 @@ h3.text-profile{
     margin-left: 40px;
 }
 .chart:hover {
-
-    filter: grayscale(0);
-    transition: 0.4s;
+    img{
+        filter:grayscale(0);
+        transition: 0.4s;
+    }
+       
+    
 }
 .skillbar {
     border-radius: 50px;
@@ -320,8 +330,6 @@ h3.text-profile{
 
 	height:24px;
 	width:0px;
-
-
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
     border-radius: 50px;
@@ -338,20 +346,25 @@ h3.text-profile{
 	color:rgba(0, 0, 0, 0.8);
     border-radius: 50px;
 }
-@media (max-width: 776px) {
+@media (max-width: 768px) {
     .tool .chart{
         margin-top: 20px;
     }
     .tool .chart{
-        margin-right: 40px;
-        margin-left: 0px;
+        margin-right: 40px ;
+        margin-left: 0px ;
         padding-left: 0px;
+    }
+    .skill-bar{
+        padding-left: 30px !important;
     }
 
 }
 
 /*================================================================== section 4 portfolio =============================================================== */
-
+#section4 {
+    overflow: hidden;
+}
 
 body.modal-open {
     overflow: hidden;
@@ -429,6 +442,7 @@ body.modal-open {
 
 .portfolio-thumb img {
     width: 100%;
+    cursor: pointer;
 }
 
 .portfolio-box {
@@ -520,6 +534,7 @@ img[alt="img"]:hover {
 /*================================================================== section 5 experience =============================================================== */
 
 #section5{
+    overflow: hidden;
     position: relative;
     margin-top: 150px !important;
     
@@ -643,41 +658,93 @@ img[alt="img"]:hover {
 
 /* ========================================================section6============================================================= */
 
-#section6{
-    margin-top: 150px !important; 
-    background-color: rgb(25, 25, 25,0.1);
+#section6 {
+    overflow: hidden;
+    margin-top: 150px;
+    background-color: rgba(25, 25, 25, 0.1);
+    margin-bottom: 0px !important;
 }
+
+.icon-service {
+    fill: var(--colour-nav);
+}
+
 .magin-6 {
-margin: 80px 0px 80px;
+    margin-bottom: 80px;
+    margin-top: 80px !important; 
 }
+
+@media (max-width: 768px) {
+    .magin-6 {
+        margin-bottom: 80px;
+        margin-top: 20px !important; 
+    }
+    h2.service {
+        margin-top: 40px !important;
+    }
+}
+
 .servic-box {
     background-color: var(--colour-nav);
     padding: 20px;
     text-align: center;
     border-radius: 10px;
-
-    margin:10px;
-    color:white;
-
+    margin: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ใช้เพื่อจัดแนวในแนวตั้ง */
+    justify-content: center; /* ใช้เพื่อจัดแนวในแนวนอน */
 }
 
-.service-title{
-    color: var(--bg-main-color);
+.bg-icons {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px !important;
+    height: 52px !important;
+    background-color: #fff;
+    margin: 0 auto; /* ให้อยู่ตรงกลาง */
+    margin-bottom: 10px !important;
+}
+
+.service-title {
+    color: white;
     font-size: var(--topic-size);
     
 }
-.service-title p{
-    font-size: var(--detail-size);
+.servic-box:hover .service-title  {
+        transition: 0.5s;
+        color: var(--bg-main-color);
+
+}
+.servic-box:hover .icon-service  {
+    transition: 0.5s;
+
+    fill: var(--bg-main-color);
 }
 
 
-
+.service-title p {
+    font-size: var(--detail-size);
+}
+@media (max-width: 768px) {
+    .magin-6 {
+        margin-bottom: 80px;
+        margin-top: 20px !important; 
+    }
+    h2.service {
+        margin-top: 40px !important;
+    }
+}
 
 /*============================================================== section7 =====================================================*/
 #section7 {
+    overflow: hidden;
     background-color: #191919;
     padding: 50px 0;
-    margin-top: 150px !important;
+    margin-top: 0px;
 }
 
 .section7 {
@@ -705,11 +772,6 @@ margin: 80px 0px 80px;
     margin: 0 10px; /* Adjust the spacing between icons */
 }
 
-.contact-details {
-    display: flex;
-    justify-content: center;
-}
-
 .contact-details > span.contact-me {
     text-align: center;
     margin: 20px 20px;
@@ -718,22 +780,56 @@ margin: 80px 0px 80px;
 
 .contact-details > span > a {
     text-align: center;
-    margin:8px;
-    color: var(--bg-main-color);
+    margin: 8px;
+    color: #FFFF;
     /* Adjust the spacing between contact details */
 }
 
-/* section7 */
+.contact-me > svg {
+    fill: #bbb;
+    stroke: #191919;
+    color: #000000;;
+    width: 36px;
+    height: 36px;
+}
+
+.contact-details > span > a {
+    text-decoration: none;
+}
+
+@media (min-width: 568px) {
+    .contact-details {
+        display: flex;
+        justify-content: center;
+
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-details > span.contact-me {
+        display: block;
+        margin-bottom: 20px;
+ /* Adds space between phone and email */
+    }
+    .contact-details > span svg {
+
+        width: 28px;
+        height: 28px;
+ /* Adds space between phone and email */
+    }
+}
+
 #section7 {
+    overflow: hidden;
     background-color: #191919;
     display: flex;
     justify-content: center;
     align-items: center;
-   
     width: 100%;
 }
 /* button back to top */
 .back-to-top {
+    opacity: 0.2;
     position: fixed;
     bottom: 40px;
     right: 40px;
@@ -744,12 +840,18 @@ margin: 80px 0px 80px;
     z-index: 1000; /* Ensure it is above other elements */
 
 }
+.back-to-top:hover {
+    opacity: 1;
+/* Ensure it is above other elements */
+
+}
+
 
 button.back-to-top[title] {
     position: relative;
     position: fixed;
-    bottom: 40px;
-    right: 40px;
+    bottom: 10px;
+    right: 10px;
     fill:var(--bg-main-color);
     background-color: transparent;
     border: transparent solid;
@@ -774,6 +876,7 @@ button.back-to-top[title]::after {
 }
 
 button.back-to-top:hover::after {
+   
     opacity: 1;
 }
 
@@ -799,8 +902,8 @@ button.back-to-top:hover::after {
 
 @media (max-width: 768px) {
     .back-to-top {
-        bottom: 20px;
-        right: 20px;
+        bottom: 10px;
+        right: 10px;
 
     }
 
@@ -822,15 +925,37 @@ button.back-to-top:hover::after {
         height: 28px;
     }
 }
-.contact-me > svg {
-    fill: #bbb;
-    stroke: #191919;
-    color: #000000;;
-    width: 24px;
-    height: 24px;
-
-}
-
 
 /*  */
 
+@media (max-width: 568px) {
+#section3, #section4, #section5, #section6, #section7{
+    margin-top: 40px !important;
+}
+#section3{
+    padding-top: 20px !important;
+}
+.social svg {
+    margin: 20px 16px 0 8px;
+    fill: #bbb;
+    width: 24px !important;
+    height: 24px !important;
+}
+#section7{
+    margin-top: 0px !important;
+}
+
+}
+@media (max-width: 768px) {
+    #section3, #section4, #section5, #section6, #section7{
+        margin-top: 40px !important;
+    }
+    #section3{
+        padding-top: 20px !important;
+    }
+
+    #section7{
+        margin-top: 0px !important;
+    }
+    
+    }

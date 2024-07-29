@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-   
+    
   jQuery(document).ready(function() {
             function animateSkillBars() {
                 jQuery('.skillbar').each(function() {
@@ -32,7 +32,9 @@ $(document).ready(function(){
         alert('Please fill out all fields.');
     }
 });
+
 });
+
 document.addEventListener('DOMContentLoaded', function() {
     // Handle navigation link clicks
     document.querySelectorAll('.nav').forEach(function(element) {
@@ -148,3 +150,4 @@ document.getElementById('download-cv').addEventListener('click', function(event)
     a.click();
     document.body.removeChild(a);
 });
+

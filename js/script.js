@@ -1,41 +1,35 @@
+$(document).ready(function() {
+    function animateSkillBars() {
+        jQuery('.skillbar').each(function() {
+            var elementPos = jQuery(this).offset().top;
+            var topOfWindow = jQuery(window).scrollTop();
+            var windowHeight = jQuery(window).height();
 
-$(document).ready(function(){
-    
-  jQuery(document).ready(function() {
-            function animateSkillBars() {
-                jQuery('.skillbar').each(function() {
-                    var elementPos = jQuery(this).offset().top;
-                    var topOfWindow = jQuery(window).scrollTop();
-                    var windowHeight = jQuery(window).height();
-
-                    if (elementPos < topOfWindow + windowHeight - 100) {
-                        jQuery(this).find('.skillbar-bar').animate({
-                            width: jQuery(this).attr('data-percent')
-                        }, 2000);
-                    }
-                });
+            if (elementPos < topOfWindow + windowHeight - 100) {
+                jQuery(this).find('.skillbar-bar').animate({
+                    width: jQuery(this).attr('data-percent')
+                }, 2000);
             }
-
-            jQuery(window).on('scroll', animateSkillBars);
-            animateSkillBars(); // Call once to animate skill bars that are already in view
         });
-  document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    
-    if (name && email && message) {
-        alert('Thank you for your message, ' + name + '!');
-    } else {
-        alert('Please fill out all fields.');
     }
-});
 
-});
+    jQuery(window).on('scroll', animateSkillBars);
+    animateSkillBars(); // Call once to animate skill bars that are already in view
 
-document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        if (name && email && message) {
+            alert('Thank you for your message, ' + name + '!');
+        } else {
+            alert('Please fill out all fields.');
+        }
+    });
+
     // Handle navigation link clicks
     document.querySelectorAll('.nav').forEach(function(element) {
         element.addEventListener('click', function(e) {
@@ -135,19 +129,27 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
-document.getElementById('download-cv').addEventListener('click', function(event) {
-    event.preventDefault(); // ป้องกันการดำเนินการเริ่มต้นของลิงก์
-    var url = this.href;
-    // เปิดแท็บใหม่
-    window.open(url, '_blank');
 
-    // สร้างลิงก์ใหม่เพื่อดาวน์โหลดไฟล์
-    var a = document.createElement('a');
-    a.href = url;
-    a.download = '';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-});
+    // Handle the download-cv button click
+    document.getElementById('download-cv').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        var url = this.href;
+        // Open in new tab and start download
+        var newTab = window.open(url, '_blank');
+        if (newTab) {
+            newTab.focus();
+        }
+    });
 
+    // Handle the newtab-port button click
+    document.getElementById('newtab-port').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        var url = this.querySelector('a').href; // Get URL from the link
+
+        // Open in new tab
+        var newTab = window.open(url, '_blank');
+        if (newTab) {
+            newTab.focus();
+        }
+    });
+});

@@ -226,7 +226,7 @@ h3.text-profile{
     transition: 0.5s;
     
 }
-#section2 .btn.btn-primary:hover {
+#section2 .btn-primary:hover {
     border-color: var(--bg-main-color);
     background-color:transparent;
     color: var(--colour-nav);
@@ -376,30 +376,54 @@ body.modal-open {
     color: var(--colour-nav);
     text-align: center;
     font-size: var(--topic-size);
-
 }
+
 .text-port {
     font-size: var(--detail-size);
     color: white;
     padding: 0px 40px;
 }
+
 .btn-primary {
-    background-color:transparent;
+    background-color: transparent;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     border-color: var(--bg-main-color);
     transition: 0.5s;
-    
 }
-.btn.btn-primary:hover {
+
+.btn-port {
+    background-color: var(--bg-main-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    border-color: var(--bg-main-color);
+    transition: 0.5s;
+    font-size: var(--detail-size);
+    display: flex;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px; /* Adjust this value if you need more spacing */
+}
+
+.btn-primary:hover {
     border-color: var(--bg-main-color);
     background-color: #ff4c4c;
-
 }
+
 @media (max-width: 768px) {
-    .btn-primary{
+    .btn-primary {
         margin-bottom: 20px;
     }
 }
@@ -459,11 +483,13 @@ body.modal-open {
     visibility: hidden;
     padding: 15px;
     transition: all 0.5s;
+    text-decoration: none !important;
 }
 
 .portfolio-box:hover .hover {
     opacity: 1;
     visibility: visible;
+    text-decoration: none !important;
 }
 
 .portfolio-box .hover div {
@@ -473,6 +499,7 @@ body.modal-open {
     justify-content: center;
     width: 100%;
     height: 100%;
+    text-decoration: none !important;
 }
 
 a,
@@ -489,6 +516,7 @@ img {
     -moz-transform: scale(.9);
     -o-transform: scale(.9);
     transform: scale(.9);
+    text-decoration: none !important;
 }
 
 .modal-dialog-centered {
@@ -530,6 +558,85 @@ img[alt="img"]:hover {
     height: 8px;
 }
 
+a .portfolio-thumb {
+    position: relative;
+}
+
+a .portfolio-thumb > img {
+    display: block;
+}
+
+.content-port {
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background-image:linear-gradient(to bottom , rgba(255, 255, 255,1),rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)) ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.6s;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.content-port .text-subtitle-port {
+    color: var(--bg-main-color);
+    font-size: var(--topic-size);
+    text-decoration: none !important;
+}
+
+.content-port .detail-port {
+    color: var(--colour-nav);
+    font-size: var(--subtopic-size);
+    text-decoration: none !important;
+}
+
+.content-port .readmore {
+    color: var(--bg-main-color);
+    font-size: var(--detail-size);
+    cursor: pointer;
+  
+    text-transform: capitalize;
+}
+.content-port .readmore:hover{
+    text-decoration: underline;
+}
+
+.portfolio-box:hover .content-port {
+    opacity: 1;
+    -webkit-transform: scale(.9);
+    -moz-transform: scale(.9);
+    -o-transform: scale(.9);
+    transform: scale(.9);
+}
+
+.portfolio-box:hover .overlay,
+img {
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.portfolio-box:hover .portfolio-thumb > img {
+    -webkit-transform: scale(.9);
+    -moz-transform: scale(.9);
+    -o-transform: scale(.9);
+    transform: scale(.9);
+}
+
+.text-detail {
+    font-size: var(--detail-size);
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px; /* Adjust this value if you need more spacing */
+}
 
 /*================================================================== section 5 experience =============================================================== */
 
@@ -666,7 +773,7 @@ img[alt="img"]:hover {
 }
 
 .icon-service {
-    fill: var(--colour-nav);
+    fill: var(--bg-main-color);
 }
 
 .magin-6 {
@@ -719,11 +826,11 @@ img[alt="img"]:hover {
         color: var(--bg-main-color);
 
 }
-.servic-box:hover .icon-service  {
+/* .servic-box:hover .icon-service  {
     transition: 0.5s;
 
-    fill: var(--bg-main-color);
-}
+    fill: var(--colour-nav);
+} */
 
 
 .service-title p {

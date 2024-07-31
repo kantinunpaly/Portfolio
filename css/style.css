@@ -64,10 +64,8 @@ h2.title {
 /*================================================================== navbar=============================================================== */
 
 .navbar.navbar-expand-lg {
-    
     position: relative;
     transition: background-color 0.3s ease;
-   
 }
 
 .nav {
@@ -75,18 +73,18 @@ h2.title {
     font-size: var(--detail-size);
     display: block;
     padding: 20px;
-    color: #ffffff; /* สีปกติ */
+    color: #ffffff;
     text-decoration: none;
     transition: color 0.3s;
     font-weight: lighter;
 }
 
 .nav:hover {
-    color: var(--bg-main-color); /* สีเมื่อ hover */
+    color: var(--bg-main-color);
 }
 
 .nav.active {
-    color: var(--bg-main-color); /* สีเมื่อคลิกและคงไว้ */
+    color: var(--bg-main-color);
 }
 
 #menu-icon {
@@ -99,27 +97,25 @@ h2.title {
 button.navbar-toggler {
     stroke: #ffffff;
 }
+
 .navbar-nav .ms-auto {
     background-color: var(--colour-nav);
 }
 
-/* Add this CSS to set the background color when the navbar is toggled */
-.navbar-toggler.collapsed {
+
+
+.navbar-toggler:not(.collapsed) {
     background-color: transparent;
 }
 
-.navbar-toggler:not(.collapsed) {
-    background-color: var(--colour-nav);
-}
-
-/* Add this CSS to set the background color of the navbar menu when toggled */
 .navbar-nav {
     transition: background-color 0.3s ease;
 }
 
 .navbar-nav.toggled {
-    background-color: var(--colour-nav);
+    background-color: rgb(25, 25, 25); /* พื้นหลังเมนูเมื่อเปิด */
 }
+
 
 /*================================================================== section 1=============================================================== */
 #section1 {

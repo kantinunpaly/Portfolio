@@ -1,33 +1,33 @@
-$(document).ready(function() {
-    function animateSkillBars() {
-        jQuery('.skillbar').each(function() {
-            var elementPos = jQuery(this).offset().top;
-            var topOfWindow = jQuery(window).scrollTop();
-            var windowHeight = jQuery(window).height();
-
-            if (elementPos < topOfWindow + windowHeight - 100) {
-                jQuery(this).find('.skillbar-bar').animate({
-                    width: jQuery(this).attr('data-percent')
-                }, 2000);
-            }
-        });
+$(document).ready(function(){
+    // Function to toggle navbar visibility
+    function toggleNavbar() {
+        let navbarCollapse = $('#navbarNav');
+        navbarCollapse.toggleClass('show');
     }
 
-    jQuery(window).on('scroll', animateSkillBars);
-    animateSkillBars(); // Call once to animate skill bars that are already in view
+    // Attach the toggle function to the navbar-toggler button
+    $('.navbar-toggler').on('click', function() {
+        toggleNavbar();
+    });
 
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        
-        if (name && email && message) {
-            alert('Thank you for your message, ' + name + '!');
-        } else {
-            alert('Please fill out all fields.');
+    // Additional code for skillbar animation and other functionalities
+    jQuery(document).ready(function() {
+        function animateSkillBars() {
+            jQuery('.skillbar').each(function() {
+                var elementPos = jQuery(this).offset().top;
+                var topOfWindow = jQuery(window).scrollTop();
+                var windowHeight = jQuery(window).height();
+
+                if (elementPos < topOfWindow + windowHeight - 100) {
+                    jQuery(this).find('.skillbar-bar').animate({
+                        width: jQuery(this).attr('data-percent')
+                    }, 2000);
+                }
+            });
         }
+
+        jQuery(window).on('scroll', animateSkillBars);
+        animateSkillBars(); // Call once to animate skill bars that are already in view
     });
 
     // Handle navigation link clicks
@@ -55,11 +55,10 @@ $(document).ready(function() {
 
             // Close the navbar in responsive mode
             if (window.innerWidth <= 576) {
-                let navbarToggler = document.querySelector('.navbar-toggler');
                 let navbarCollapse = document.querySelector('#navbarNav');
 
                 if (navbarCollapse.classList.contains('show')) {
-                    navbarToggler.click();
+                    toggleNavbar();
                 }
             }
         });
@@ -75,6 +74,8 @@ $(document).ready(function() {
             navbar.style.backgroundColor = '#191919';
         } else {
             navbar.style.backgroundColor = 'transparent';
+     
+            
         }
 
         // Show or hide back to top button
@@ -120,36 +121,26 @@ $(document).ready(function() {
     document.querySelectorAll('.nav-item .nav').forEach(function(element) {
         element.addEventListener('click', function() {
             if (window.innerWidth <= 576) {
-                let navbarToggler = document.querySelector('.navbar-toggler');
                 let navbarCollapse = document.querySelector('#navbarNav');
 
                 if (navbarCollapse.classList.contains('show')) {
-                    navbarToggler.click();
+                    toggleNavbar();
                 }
             }
         });
     });
+});
+document.getElementById('download-cv').addEventListener('click', function(event) {
+    event.preventDefault(); // ป้องกันการดำเนินการเริ่มต้นของลิงก์
+    var url = this.href;
+    // เปิดแท็บใหม่
+    window.open(url, '_blank');
 
-    // Handle the download-cv button click
-    document.getElementById('download-cv').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default link behavior
-        var url = this.href;
-        // Open in new tab and start download
-        var newTab = window.open(url, '_blank');
-        if (newTab) {
-            newTab.focus();
-        }
-    });
-
-    // Handle the newtab-port button click
-    document.getElementById('newtab-port').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default link behavior
-        var url = this.querySelector('a').href; // Get URL from the link
-
-        // Open in new tab
-        var newTab = window.open(url, '_blank');
-        if (newTab) {
-            newTab.focus();
-        }
-    });
+    // สร้างลิงก์ใหม่เพื่อดาวน์โหลดไฟล์
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = '';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
 });
